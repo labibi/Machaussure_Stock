@@ -1,0 +1,92 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* alb_stock_restrictions
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-13 12:00+0000\n"
+"PO-Revision-Date: 2020-04-13 13:04+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr\n"
+"X-Generator: Poedit 2.3\n"
+
+#. module: alb_stock_restrictions
+#: model_terms:ir.ui.view,arch_db:alb_stock_restrictions.view_location_security_users_form
+msgid "Allowed Stock Locations"
+msgstr "Emplacements de stock autorisés"
+
+#. module: alb_stock_restrictions
+#: model:ir.model.fields,field_description:alb_stock_restrictions.field_res_users__default_picking_type_ids
+msgid "Default Warehouse Operations"
+msgstr "Types d’opérations par défaut"
+
+#. module: alb_stock_restrictions
+#: code:addons/alb_stock_restrictions/models/stock.py:0
+#, python-format
+msgid ""
+"Invalid Location. You cannot process this move since you do not control the "
+"location \"%s\". Please contact your Adminstrator."
+msgstr ""
+"Location invalide. Vous ne pouvez pas traiter ce déplacement car vous ne "
+"contrôlez pas l’emplacement « %s ». Veuillez contacter votre administrateur."
+
+#. module: alb_stock_restrictions
+#: model_terms:ir.ui.view,arch_db:alb_stock_restrictions.view_location_security_users_form
+msgid "Locations"
+msgstr "Emplacements"
+
+#. module: alb_stock_restrictions
+#: model_terms:ir.ui.view,arch_db:alb_stock_restrictions.product_form_view_procurement_button_alb
+#: model_terms:ir.ui.view,arch_db:alb_stock_restrictions.product_product_view_form_easy_inherit_stock_alb
+#: model_terms:ir.ui.view,arch_db:alb_stock_restrictions.product_template_view_procurement_button_alb
+msgid "Replenish"
+msgstr "Réapprovisionner"
+
+#. module: alb_stock_restrictions
+#: model:ir.model.fields,field_description:alb_stock_restrictions.field_res_users__restrict_locations
+msgid "Restrict Location"
+msgstr "Restreindre les emplacements"
+
+#. module: alb_stock_restrictions
+#: model:res.groups,name:alb_stock_restrictions.group_restrict_warehouse
+msgid "Restrict Stock warehouses"
+msgstr "Restreindre les entrepôts"
+
+#. module: alb_stock_restrictions
+#: model:ir.model.fields,field_description:alb_stock_restrictions.field_res_users__stock_location_ids
+msgid "Stock Locations"
+msgstr "Emplacements"
+
+#. module: alb_stock_restrictions
+#: model:ir.model,name:alb_stock_restrictions.model_stock_move
+msgid "Stock Move"
+msgstr "Stock déplacer"
+
+#. module: alb_stock_restrictions
+#: model_terms:ir.ui.view,arch_db:alb_stock_restrictions.product_form_view_procurement_button_alb
+#: model_terms:ir.ui.view,arch_db:alb_stock_restrictions.product_product_view_form_easy_inherit_stock_alb
+#: model_terms:ir.ui.view,arch_db:alb_stock_restrictions.product_template_view_procurement_button_alb
+msgid "Update Quantity"
+msgstr "Mettre la quantité à jour"
+
+#. module: alb_stock_restrictions
+#: model:res.groups,name:alb_stock_restrictions.group_update_qty_onhand
+msgid "Update quantity on hand"
+msgstr "Mettre la quantité à jour"
+
+#. module: alb_stock_restrictions
+#: model:ir.model,name:alb_stock_restrictions.model_res_users
+msgid "Users"
+msgstr "Utilisateurs"
+
+#. module: alb_stock_restrictions
+#: model_terms:ir.ui.view,arch_db:alb_stock_restrictions.view_users_form
+msgid "Warehouse Restrictions"
+msgstr "Restrictions sur les entrepôts"

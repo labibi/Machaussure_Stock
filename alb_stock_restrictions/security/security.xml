@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="group_restrict_warehouse" model="res.groups">
+            <field name="name">Restrict Stock warehouses</field>
+        </record>
+
+        <record id="group_update_qty_onhand" model="res.groups">
+            <field name="name">Update quantity on hand</field>
+        </record>
+
+
+
+        <record id="filter_user_stock_picking_type_allowed_new" model="ir.rule">
+            <field name="name">Filter Stock Picking Type Allowed new</field>
+            <field name="model_id" search="[('model','=','stock.picking.type')]" model="ir.model"/>
+            <field name="groups" eval="[(4, ref('group_restrict_warehouse'))]"/>
+            <field name="domain_force">[('id','in', [ p.id for p in user.alb_default_picking_type_ids ])]</field>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+        <record id="filter_user_stock_locations_allowed_new" model="ir.rule">
+            <field name="name">Filter Stock Location Allowed new</field>
+            <field name="model_id" ref="stock.model_stock_quant"/>
+            <!--            <field name="model_id" search="[('model','=','stock.location')]" model="ir.model"/>-->
+            <field name="groups" eval="[(4, ref('group_restrict_warehouse'))]"/>
+            <field name="domain_force">[('location_id','in', [ p.id for p in user.alb_stock_location_ids ])]</field>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <record id="filter_user_stock_locations_location_allowed_new" model="ir.rule">
+            <field name="name">Filter Stock Location Allowed new</field>
+            <field name="model_id" ref="stock.model_stock_location"/>
+            <!--            <field name="model_id" search="[('model','=','stock.location')]" model="ir.model"/>-->
+            <field name="groups" eval="[(4, ref('group_restrict_warehouse'))]"/>
+            <field name="domain_force">[('id','in', [ p.id for p in user.alb_stock_location_ids ])]</field>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <record id="filter_user_stock_picking_allowed_new" model="ir.rule">
+            <field name="name">Filter Stock Pickings </field>
+            <field name="model_id" ref="stock.model_stock_picking"/>
+            <!--            <field name="model_id" search="[('model','=','stock.location')]" model="ir.model"/>-->
+            <field name="groups" eval="[(4, ref('group_restrict_warehouse'))]"/>
+            <field name="domain_force">[('picking_type_id','in', [ p.id for p in user.alb_default_picking_type_ids ])]</field>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <record id="filter_respo_stock_picking_type_allowed_new" model="ir.rule">
+            <field name="name">Filter Stock Picking Type Allowed new</field>
+            <field name="model_id" search="[('model','=','stock.picking.type')]" model="ir.model"/>
+            <field name="groups" eval="[(4, ref('stock.group_stock_manager'))]"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+        <record id="filter_respo_stock_locations_allowed_new" model="ir.rule">
+            <field name="name">Filter Stock Location Allowed new</field>
+            <field name="model_id" ref="stock.model_stock_quant"/>
+            <!--            <field name="model_id" search="[('model','=','stock.location')]" model="ir.model"/>-->
+            <field name="groups" eval="[(4, ref('stock.group_stock_manager'))]"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+        <record id="filter_respo_stock_picking_allowed_new" model="ir.rule">
+            <field name="name">Filter Stock Pickings </field>
+            <field name="model_id" ref="stock.model_stock_picking"/>
+            <!--            <field name="model_id" search="[('model','=','stock.location')]" model="ir.model"/>-->
+            <field name="groups" eval="[(4, ref('stock.group_stock_manager'))]"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+        <record id="filter_respo_stock_locations_l_allowed_new" model="ir.rule">
+            <field name="name">Filter Stock Pickings </field>
+            <field name="model_id" ref="stock.model_stock_location"/>
+            <!--            <field name="model_id" search="[('model','=','stock.location')]" model="ir.model"/>-->
+            <field name="groups" eval="[(4, ref('stock.group_stock_manager'))]"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+
+        <record id="stock.group_stock_user" model="res.groups">
+            <field name="implied_ids" eval="[(4, ref('group_restrict_warehouse'))]"/>
+        </record>
+
+    </data>
+</odoo>
